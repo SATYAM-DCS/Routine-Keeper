@@ -247,7 +247,7 @@ table{
     text-decoration: none;
     background-color: transparent; }
     a:hover {
-      color: #0056b3;
+      color: #f8f9fa;
       text-decoration: underline; }
   
   a:not([href]):not([tabindex]) {
@@ -1707,7 +1707,6 @@ table{
     font-weight: 400;
     line-height: 1.5;
     color: #495057;
-    background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
