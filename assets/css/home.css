@@ -13,7 +13,7 @@
 }
 
 #wellcome{
-    color: #32376a;
+    color: #f8f9fa;
 }
 
 #nav-bar div {
@@ -243,7 +243,7 @@ table{
     top: -.5em; }
   
   a {
-    color: #007bff;
+    color: #f8f9fa;
     text-decoration: none;
     background-color: transparent; }
     a:hover {
@@ -1726,7 +1726,7 @@ table{
       border: 0; }
     .form-control:focus {
       color: #495057;
-      background-color: #fff;
+     /* background-color: #fff;*/
       border-color: #80bdff;
       outline: 0;
       -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
