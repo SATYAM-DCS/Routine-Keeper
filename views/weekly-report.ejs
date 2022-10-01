@@ -1,0 +1,48 @@
+<%- include('_navigation'); %>
+
+    <div id="weekly-report">
+        <table>
+            <th> </th>
+            <!-- iterate over all habits and extract past 7 days report -->
+            <% for (let i=habits.length; i>=0; i--) { %>
+                <% if(i==habits.length){ 
+                    for(let j=6 ; j>= 0 ; j--){
+                        let d = new Date();
+                        d.setDate(d.getDate() - j);
+                        d = d.toString(); %>
+                        <th> <%= d.substring(4, 15) %> </th>
+                    <% } 
+                } else { %>
+                    <tr>
+                        <% for(let j=7 ; j>=0; j--) {
+                            let d = new Date();
+                            d.setDate(d.getDate() - j);
+                            let date = d.getDate().toString() + d.getMonth().toString() + d.getFullYear().toString();
+                            if(j==7){ %>
+                                <th>
+                                    <%= habits[i].content %>
+                                </th>
+                            <% } else { 
+                                let flag=true; 
+                                for(let k=habits[i].dates.length -1 ; k>= 0 ; --k) {
+                                    if(habits[i].dates[k].date == date) { 
+                                        flag=false 
+                                        if(date==habits[i].dates[k].date) { %>
+                                            <td id="<%=habits[i].dates[k].status %>" >
+                                                <a id="<%=habits[i].dates[k].status %>" href="/done-notdone/?id=<%= habits[i].id %>&date=<%= habits[i].dates[k].date %>&status=<%=habits[i].dates[k].status %>"> <%=habits[i].dates[k].status %> </a> 
+                                            </td>                                                
+                                        <% }    
+                                    } 
+                                } 
+                                if(flag){ %>
+                                    <td  id="Un-marked">
+                                        <a id="Un-marked" href="/done-notdone/?id=<%= habits[i].id %>&date=<%=date%>&status=new-status"> Un-marked </a>
+                                    </td>
+                                <%}
+                            }
+                        }%>
+                    </tr>
+                <% } 
+            } %>
+        </table>
+    </div>

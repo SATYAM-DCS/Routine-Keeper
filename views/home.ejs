@@ -1,0 +1,49 @@
+<%- include('_navigation'); %>
+
+<div id="searh-display" >
+    <div id="input">
+        <form action="/create-habit" method="POST" class="signin-form row justify-content-center">
+            <input name="habit" type="text" placeholder="Add Your Habit" class="form-control" required>
+            <button type="submit" class="form-control btn btn-primary submit px-3"> Add </button>
+        </form>
+    </div>
+    <div  id="habit">
+        <% let d = new Date();
+        let date = d.getDate().toString() + d.getMonth().toString() + d.getFullYear().toString();%>
+        <% for(let h of habits) { %>
+            <div>
+                <% let flag=true;
+                for(let k=h.dates.length - 1 ; k>= 0 ; --k) {
+                    if(date==h.dates[k].date) { 
+                        flag = false %>
+                        <div id="<%=h.dates[k].status %>" class="habit-display">
+                            <a id="<%=h.dates[k].status %>" href="/done-notdone/?id=<%= h.id %>&date=<%= date %>&status=<%=h.dates[k].status %>">
+                                <%= h.content %> 
+                            </a>
+                            
+                            <a id="<%=h.dates[k].status %>" href="/done-notdone/?id=<%= h.id %>&date=<%= date %>&status=<%=h.dates[k].status %>">
+                                
+                                <%=h.dates[k].status %> 
+                            </a>
+                            <a id="<%=h.dates[k].status %>" href="/delete/<%= h.id %>" method="Post"> <i class="fa-solid fa-trash-can"></i> </a>
+                        </div>
+                        
+                    <% } 
+                }
+                if(flag){ %>
+                    <div id="Un-marked" class="habit-display">
+                        <a id="Un-marked" href="/done-notdone/?id=<%= h.id %>&date=<%= date %>&status=new-status"> 
+                            <%= h.content %>
+                        </a>
+                        <a id="Un-marked" href="/done-notdone/?id=<%= h.id %>&date=<%= date %>&status=new-status"> 
+                            Un-marked 
+                        </a>
+                        <a id="Un-marked" href="/delete/<%= h.id %>" method="Post"> <i class="fa-solid fa-trash-can"></i> </a>
+                    </div>
+                    
+                <% } %>
+ 
+            </div>
+        <% } %>
+    </div>
+</div>
