@@ -25,12 +25,13 @@
 
 #input{
     margin: 10px;
+    background-color: #212529 ;
 }
 
 #searh-display{
     margin-top: 20px;
     text-align: center;
-    background-color: #32376a !important;
+  
 }
 
 .habit-display{
