@@ -243,11 +243,11 @@ table{
     top: -.5em; }
   
   a {
-    color: #f8f9fa;
+   /* color: #f8f9fa;*/
     text-decoration: none;
     background-color: transparent; }
     a:hover {
-      color: #f8f9fa;
+      /*color: #f8f9fa;*/
       text-decoration: underline; }
   
   a:not([href]):not([tabindex]) {
