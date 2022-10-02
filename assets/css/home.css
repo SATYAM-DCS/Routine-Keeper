@@ -30,6 +30,7 @@
 #searh-display{
     margin-top: 20px;
     text-align: center;
+    background-color: #32376a !important;
 }
 
 .habit-display{
@@ -1707,7 +1708,7 @@ table{
     font-weight: 400;
     line-height: 1.5;
     color: #495057;
-    background-color: rgb(255 255 255 / 15%);
+    background-color: #32376a !important;
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
