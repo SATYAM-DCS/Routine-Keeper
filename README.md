@@ -61,10 +61,9 @@ Habit Tracker
 - Heroku
 
 
-## Deployed on Heroku
+## Deployed on Railway-APP
 
-https://obscure-wave-65001.herokuapp.com/
-
+https://habits-tracker.up.railway.app/signin
 
 
 
