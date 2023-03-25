@@ -15,7 +15,7 @@
         <% for(let h of habits) { %>
             <div>
                 <% let flag=true;
-                for(let k=h.dates.length - 1 ; k>= 0 ; --k) {
+                for(let k = h.dates.length - 1 ; k>= 0 ; --k) { 
                     if(date==h.dates[k].date) { 
                         flag = false %>
                         <div id="<%=h.dates[k].status %>" class="habit-display">

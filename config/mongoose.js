@@ -5,7 +5,7 @@ require('dotenv').config()
 const mongoose = require('mongoose');
 
 //  connect mongoose
-mongoose.connect(process.env.DATABASE);
+mongoose.connect(process.env.DATABASE ||  `mongodb://localhost/Habit_Tracker`);
 const db = mongoose.connection;
 
 // mongoose connection | error

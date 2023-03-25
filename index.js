@@ -1,7 +1,7 @@
 require('dotenv').config() // require .env 
 
 const express = require('express');
-const port = process.env.PORT;
+const port = process.env.PORT || 8000;
 const path = require('path'); // require path
 const cookieParser = require('cookie-parser');  // require cookoe parser
 
@@ -40,5 +40,5 @@ app.listen(port, (err) => {
     if (err) {
         console.log(err);
     }
-    console.log(`Running on port :: ${port}`);
+    console.log(`Running on port :: ${8000}`);
 })

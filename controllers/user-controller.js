@@ -11,13 +11,14 @@ module.exports.signinSignup = async (req, res) => {
 
     // if esesist -> login
     if (userEmail) {
+        //  If a user with the specified email address exists, the function sets a cookie named "user_id" with the value of the user's _id.
         res.cookie('user_id', userEmail._id)
     } else {
         // if not exesist -> create one
         let user = await User.create({
             email: req.body.email
         });
-        // add user id to local cookies
+        // add user id to local cookies , 
         res.cookie('user_id', user._id);
     }
     return res.redirect('/') ;
