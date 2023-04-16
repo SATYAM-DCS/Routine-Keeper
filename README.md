@@ -63,7 +63,7 @@ Habit Tracker
 
 ## Deployed on Railway-APP
 
-https://habits-tracker.up.railway.app/signin
+https://upset-jay-cuff.cyclic.app/signin
 
 
 
